@@ -25,6 +25,7 @@
 						<th scope="col">Price</th>
   					<th scope="col">Name</th>
 						<th scope="col">Is Paid?</th>
+						<th scope="col">Table</th>
 						<th scope="col">Details</th>
 				</tr>
 			</thead>
@@ -33,7 +34,7 @@
 		<tr>
 				<th scope="row">{{ order.pk }}</th>
 				<td>{{ order.price }}</td>
-				<td>{{ order.name }}</td>
+				<td>{{ order.snippet }}</td>
 				<td>
 						{% if order.is_paid %}
 						<i style="color: green;" class="fas fa-check"></i>
@@ -41,6 +42,7 @@
 						<i style="color: red;" class="fas fa-times"></i>
 						{% endif %}
 				</td>
+				<td>{{ order.table }}</td>
 					<td><a href="{% url 'order-details' order.pk %}"><i class="far fa-edit"></i></a></td>
 
 		</tr>

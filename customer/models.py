@@ -56,6 +56,11 @@ class OrderModel(models.Model):
 		def __str__(self):
 				# return 'Order: {self.created_on.strftime("%b %d %I: %M %p")}'
 				return self.name
+		def snippet(self):
+			if len(self.name)>15:
+				return self.name[:15]+"...."
+			else:
+				return self.name
 
 
 

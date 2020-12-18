@@ -50,8 +50,11 @@ class Dashboard(LoginRequiredMixin, UserPassesTestMixin, View):
 class OrderDetails(LoginRequiredMixin, UserPassesTestMixin, View):
 		def get(self, request, pk, *args, **kwargs):
 				order = OrderModel.objects.get(pk=pk)
+				items = order.name.split(", ")
+				print(items)
 				context = {
-						'order': order
+						'order': order,
+						'items':items,
 				}
 				
 				return render(request, 'restaurant/order-details.html', context)
