@@ -1,4 +1,5 @@
 {% extends 'customer/base.html' %}{% block content %}
+<body style="background-color:#787878;">
 <div class="container mb-5">
     <div class="row justify-content-center mt-1">
         <div class="col-md-12 col-sm-12 p-4">
@@ -14,11 +15,11 @@
                             <div class="d-flex flex-row">
                                 <div class="form-group form-check">
                                     <input type="checkbox" name="items[]" class="form-check-input" value="{{ me.pk }}">
-                                    <label class="form-check-label">{{ me.name }}</label>
+                                    <label style="color:#A6F721; font-size: 18px; font-weight: bold;" class="form-check-label">{{ me.name }}</label>
                                 </div>
-                                <p class="font-weight-bold pl-5">{{ app.price }}</p>
+                                <p style="color:#A6F721; font-size: 16px;"class="font-weight-bold pl-5">{{ app.price }}</p>
                             </div>
-                            <p>{{ me.description }}</p>
+                            <p style="color:#A6F721; font-size: 16px;">{{ me.description }}</p>
                         </div>
                     </div>
                     <hr />
@@ -35,11 +36,11 @@
                             <div class="d-flex flex-row">
                                 <div class="form-group form-check">
                                     <input type="checkbox" name="items[]" class="form-check-input" value="{{ drink.pk }}">
-                                    <label class="form-check-label">{{ drink.name }}</label>
+                                    <label style="color:#A6F721; font-size: 18px; font-weight: bold;"class="form-check-label">{{ drink.name }}</label>
                                 </div>
-                                <p class="font-weight-bold pl-5">{{ drink.price }}</p>
+                                <p style="color:#A6F721; font-size: 16px;"class="font-weight-bold pl-5">{{ drink.price }}</p>
                             </div>
-                            <p>{{ drink.description }}</p>
+                            <p style="color:#A6F721; font-size: 16px;">{{ drink.description }}</p>
                         </div>
                     </div>
                     <hr />
