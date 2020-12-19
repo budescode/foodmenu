@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.views import View
 from django .db.models import Q
 from .models import MenuItem, Category, OrderModel
-import random
+
 
 # Create your views here.
 class Index(View):
@@ -28,11 +28,12 @@ class Order(View):
 				return render(request, 'customer/order.html', context)
 
 		def post(self, request, *args, **kwargs):
+				print(request.POST)
 				order_items = {
 						'items': []
 				}
 				items = request.POST.getlist('items[]')
-				table = random.randint(1,30)
+				table = request.POST['table']
 				for item in items:
 						menu_item = MenuItem.objects.get(pk__contains=int(item))
 						item_data = {
@@ -53,7 +54,7 @@ class Order(View):
 						names.append(item['name'])
 
 				print(order_items)	
-				print(names)
+				# print(names)
 				names = ", ".join(names)
 				order = OrderModel.objects.create(price=price, table=table, name=names)
 				order.items.add(*item_ids)
