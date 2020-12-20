@@ -1,6 +1,1 @@
 myenv
-db.sqlite3
-customer/__pycache__
-customer/migrations
-restaurant/__pycache__
-restaurant/migrations
