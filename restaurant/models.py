@@ -19,6 +19,7 @@ class Category(models.Model):
 				return self.name
 
 class OrderModel(models.Model):
+	
 		created_on = models.DateTimeField(auto_now_add=True)
 		price = models.DecimalField(max_digits=10, decimal_places=2)
 		items = models.ManyToManyField(
